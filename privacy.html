@@ -5,275 +5,606 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BowlsKnockout — Privacy Policy</title>
 <meta name="description" content="Privacy policy for BowlsKnockout. The app collects no data.">
-<meta name="theme-color" content="#216851">
+<meta name="theme-color" content="#0a3320">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
     :root {
-        --lawn: #21754c;
+        --lawn: #1f6e47;
+        --lawn-mid: #155236;
         --lawn-deep: #0a3320;
         --lawn-deeper: #051f12;
-        --cream: #faf6e8;
-        --ink: #1c1c1e;
-        --muted: #6b6b70;
-        --line: #e3ddc7;
+        --accent: #d4b572;
+        --cream: #f6f1e1;
+        --paper: #fbf8ee;
+        --ink: #18181b;
+        --ink-soft: #3f3f46;
+        --muted: #71717a;
+        --line: #e8e1c9;
+        --line-soft: #f0eada;
         --card: #ffffff;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
     body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         color: var(--ink);
-        background: var(--cream);
-        line-height: 1.55;
+        background: var(--paper);
+        line-height: 1.6;
+        font-size: 16px;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: "ss01", "cv11";
     }
-    .hero {
-        background: linear-gradient(135deg, var(--lawn) 0%, var(--lawn-deep) 100%);
-        color: #fff;
-        padding: 72px 24px 56px;
-        position: relative;
-        overflow: hidden;
-    }
-    .hero::after {
-        content: "";
+    .serif { font-family: 'Fraunces', Georgia, serif; }
+
+    /* Top bar */
+    .topbar {
         position: absolute;
-        right: -120px;
-        top: -100px;
-        width: 360px;
-        height: 360px;
-        border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        top: 0; left: 0; right: 0;
+        z-index: 10;
+        padding: 22px 28px;
     }
-    .hero-inner {
-        max-width: 720px;
+    .topbar-inner {
+        max-width: 1080px;
         margin: 0 auto;
-        position: relative;
-        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
-    .badge {
+    .brand {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        padding: 6px 12px;
-        background: rgba(255, 255, 255, 0.12);
+        gap: 10px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: -0.1px;
+    }
+    .brand-mark {
+        width: 30px; height: 30px;
+        border-radius: 9px;
+        background: rgba(255,255,255,0.14);
+        border: 1px solid rgba(255,255,255,0.22);
+        display: grid; place-items: center;
+        backdrop-filter: blur(8px);
+    }
+    .brand-mark svg { width: 16px; height: 16px; }
+    .nav { display: flex; gap: 8px; }
+    .nav a {
+        font-size: 13.5px;
+        font-weight: 500;
+        color: rgba(255,255,255,0.78);
+        text-decoration: none;
+        padding: 8px 14px;
+        border-radius: 999px;
+        transition: background 0.15s, color 0.15s;
+    }
+    .nav a:hover { background: rgba(255,255,255,0.10); color: #fff; }
+    .nav a.active { background: rgba(255,255,255,0.14); color: #fff; }
+
+    /* Hero */
+    .hero {
+        position: relative;
+        background:
+            radial-gradient(ellipse at 80% -20%, rgba(212, 181, 114, 0.18), transparent 60%),
+            linear-gradient(155deg, var(--lawn) 0%, var(--lawn-deep) 60%, var(--lawn-deeper) 100%);
+        color: #fff;
+        padding: 130px 28px 96px;
+        overflow: hidden;
+    }
+    .hero-grain {
+        position: absolute; inset: 0;
+        background-image:
+            repeating-linear-gradient(0deg, rgba(255,255,255,0.014) 0 1px, transparent 1px 4px);
+        pointer-events: none;
+    }
+    .hero-shield {
+        position: absolute;
+        top: 50%;
+        right: -20px;
+        transform: translateY(-50%);
+        width: 480px;
+        height: 480px;
+        opacity: 0.07;
+        pointer-events: none;
+    }
+    .hero-inner {
+        max-width: 1080px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+    .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 7px 14px 7px 10px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(8px);
         color: #fff;
         border-radius: 999px;
         font-size: 12px;
         font-weight: 600;
-        letter-spacing: 0.4px;
-        text-transform: uppercase;
-        margin-bottom: 18px;
-    }
-    .badge-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: #b8e8c8;
-    }
-    h1 {
-        font-size: clamp(32px, 5vw, 48px);
-        font-weight: 800;
-        margin: 0 0 10px;
-        letter-spacing: -1px;
-        line-height: 1.1;
-    }
-    .lede {
-        font-size: 17px;
-        margin: 0;
-        color: rgba(255, 255, 255, 0.82);
-        max-width: 560px;
-    }
-    .updated {
-        margin-top: 18px;
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.7);
-        letter-spacing: 0.2px;
-    }
-    main {
-        max-width: 720px;
-        margin: 0 auto;
-        padding: 48px 24px 80px;
-    }
-    .card {
-        background: var(--card);
-        border-radius: 16px;
-        padding: 28px;
-        box-shadow: 0 1px 2px rgba(10, 51, 33, 0.06), 0 8px 24px rgba(10, 51, 33, 0.05);
-        margin-bottom: 20px;
-    }
-    .card h2 {
-        font-size: 20px;
-        font-weight: 700;
-        margin: 0 0 12px;
-        color: var(--lawn-deep);
-        letter-spacing: -0.2px;
-    }
-    .card p {
-        margin: 0 0 12px;
-        color: #2a2a2c;
-    }
-    .card p:last-child { margin-bottom: 0; }
-    .contact-block {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        margin-top: 18px;
-        padding: 18px 20px;
-        background: rgba(33, 117, 76, 0.06);
-        border: 1px solid rgba(33, 117, 76, 0.14);
-        border-radius: 12px;
-        text-decoration: none;
-    }
-    .contact-icon {
-        flex: 0 0 44px;
-        width: 44px;
-        height: 44px;
-        border-radius: 12px;
-        background: var(--lawn);
-        color: #fff;
-        display: grid;
-        place-items: center;
-        font-size: 20px;
-    }
-    .contact-text {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        min-width: 0;
-    }
-    .contact-label {
-        font-size: 11px;
-        font-weight: 700;
         letter-spacing: 0.6px;
         text-transform: uppercase;
-        color: var(--muted);
+        margin-bottom: 26px;
     }
-    .contact-email {
-        font-size: 17px;
+    .eyebrow-dot {
+        width: 7px; height: 7px;
+        border-radius: 50%;
+        background: #8ed8a3;
+        box-shadow: 0 0 0 4px rgba(142, 216, 163, 0.18);
+    }
+    h1.display {
+        font-size: clamp(42px, 6.4vw, 72px);
         font-weight: 600;
-        color: var(--lawn-deep);
-        text-decoration: none;
-        word-break: break-all;
+        margin: 0 0 18px;
+        letter-spacing: -2px;
+        line-height: 1.02;
+        max-width: 760px;
     }
-    .contact-email:hover { text-decoration: underline; }
-    .summary {
+    h1.display em {
+        font-style: italic;
+        color: var(--accent);
+        font-weight: 500;
+    }
+    .lede {
+        font-size: 18px;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.78);
+        max-width: 580px;
+        line-height: 1.55;
+    }
+    .updated {
+        margin-top: 30px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 14px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 999px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.78);
+    }
+    .updated svg { width: 14px; height: 14px; }
+
+    /* Main */
+    main {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 28px 32px;
+    }
+    .summary-card {
+        margin-top: -56px;
+        position: relative;
+        z-index: 5;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 32px 36px;
         display: flex;
-        align-items: flex-start;
-        gap: 16px;
-        padding: 20px 22px;
-        background: rgba(33, 117, 76, 0.08);
-        border: 1px solid rgba(33, 117, 76, 0.18);
-        border-radius: 12px;
-        margin-bottom: 24px;
+        align-items: center;
+        gap: 24px;
+        box-shadow:
+            0 1px 0 rgba(255,255,255,0.6) inset,
+            0 24px 48px -16px rgba(10, 51, 33, 0.18);
     }
     .summary-icon {
-        flex: 0 0 36px;
-        width: 36px;
-        height: 36px;
-        border-radius: 10px;
-        background: var(--lawn);
-        color: #fff;
-        display: grid;
-        place-items: center;
-        font-size: 18px;
-        font-weight: 700;
+        flex: 0 0 64px;
+        width: 64px; height: 64px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, var(--lawn) 0%, var(--lawn-deep) 100%);
+        display: grid; place-items: center;
+        box-shadow: 0 6px 16px -4px rgba(10, 51, 33, 0.4);
     }
+    .summary-icon svg { width: 28px; height: 28px; color: #fff; }
     .summary-text {
+        flex: 1;
+    }
+    .summary-tag {
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: var(--lawn);
+        margin-bottom: 6px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .summary-tag::before {
+        content: "";
+        width: 18px; height: 1.5px;
+        background: var(--lawn);
+        border-radius: 2px;
+    }
+    .summary-headline {
+        font-family: 'Fraunces', Georgia, serif;
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--lawn-deep);
+        line-height: 1.3;
+        letter-spacing: -0.4px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 56px;
+        margin-top: 56px;
+        align-items: start;
+    }
+    @media (max-width: 880px) {
+        .grid { grid-template-columns: 1fr; gap: 32px; margin-top: 40px; }
+        main { padding: 0 22px 24px; }
+        .hero { padding: 110px 24px 96px; }
+        .summary-card {
+            flex-direction: column;
+            text-align: center;
+            gap: 18px;
+            padding: 28px;
+            margin-top: -48px;
+        }
+        .summary-tag { justify-content: center; display: flex; }
+    }
+
+    /* Sticky TOC */
+    .toc {
+        position: sticky;
+        top: 24px;
+    }
+    .toc-title {
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 0 0 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--line);
+    }
+    .toc ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .toc li { margin: 0; }
+    .toc a {
+        display: block;
+        padding: 8px 0;
+        font-size: 14px;
+        color: var(--ink-soft);
+        text-decoration: none;
+        border-left: 2px solid transparent;
+        padding-left: 14px;
+        margin-left: -14px;
+        transition: color 0.15s, border-color 0.15s;
+    }
+    .toc a:hover {
+        color: var(--lawn-deep);
+        border-left-color: var(--lawn);
+    }
+    @media (max-width: 880px) {
+        .toc { display: none; }
+    }
+
+    /* Sections */
+    .section {
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid var(--line);
+    }
+    .section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .section-num {
+        font-family: 'Fraunces', Georgia, serif;
+        font-size: 13px;
+        font-weight: 600;
+        font-style: italic;
+        color: var(--lawn);
+        margin: 0 0 6px;
+    }
+    .section h2 {
+        font-family: 'Fraunces', Georgia, serif;
+        font-size: 30px;
+        font-weight: 600;
+        margin: 0 0 18px;
+        color: var(--lawn-deep);
+        letter-spacing: -0.6px;
+        line-height: 1.2;
+    }
+    .section p {
+        margin: 0 0 14px;
+        color: var(--ink-soft);
+        font-size: 16px;
+        line-height: 1.7;
+    }
+    .section p:last-child { margin-bottom: 0; }
+    .section strong { color: var(--ink); font-weight: 600; }
+
+    /* Highlight pull-quote */
+    .pull {
+        margin: 20px 0 0;
+        padding: 18px 22px;
+        background: rgba(31, 110, 71, 0.06);
+        border-left: 3px solid var(--lawn);
+        border-radius: 0 10px 10px 0;
         font-size: 15px;
         color: var(--lawn-deep);
         font-weight: 500;
     }
-    footer {
-        max-width: 720px;
-        margin: 0 auto;
-        padding: 0 24px 48px;
-        color: var(--muted);
-        font-size: 13px;
-        text-align: center;
-    }
-    footer a { color: var(--lawn); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
 
+    /* Contact card */
+    .contact-block {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 22px;
+        padding: 16px 18px;
+        background: var(--lawn-deep);
+        color: #fff;
+        border-radius: 14px;
+        text-decoration: none;
+        max-width: 460px;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        box-shadow: 0 8px 20px -8px rgba(10, 51, 33, 0.5);
+    }
+    .contact-block:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 26px -8px rgba(10, 51, 33, 0.55);
+    }
+    .contact-icon {
+        flex: 0 0 42px;
+        width: 42px; height: 42px;
+        border-radius: 11px;
+        background: rgba(255,255,255,0.10);
+        border: 1px solid rgba(255,255,255,0.16);
+        display: grid; place-items: center;
+    }
+    .contact-icon svg { width: 18px; height: 18px; color: #fff; }
+    .contact-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+    .contact-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.64);
+    }
+    .contact-email {
+        font-size: 15.5px;
+        font-weight: 600;
+        color: #fff;
+        word-break: break-all;
+    }
+    .contact-arrow {
+        margin-left: auto;
+        color: rgba(255,255,255,0.5);
+        transition: transform 0.18s ease, color 0.18s ease;
+    }
+    .contact-block:hover .contact-arrow { transform: translateX(2px); color: #fff; }
+
+    /* Footer */
+    footer {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 56px 28px 56px;
+        color: var(--muted);
+        font-size: 13.5px;
+    }
+    .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding-top: 28px;
+        border-top: 1px solid var(--line);
+    }
+    .footer-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--ink);
+        font-weight: 600;
+    }
+    .footer-mark {
+        width: 26px; height: 26px;
+        border-radius: 7px;
+        background: var(--lawn-deep);
+        display: grid; place-items: center;
+    }
+    .footer-mark svg { width: 14px; height: 14px; color: #fff; }
+    .footer-links { display: flex; gap: 22px; }
+    footer a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    footer a:hover { color: var(--lawn-deep); }
+
+    /* Dark mode */
     @media (prefers-color-scheme: dark) {
         :root {
-            --cream: #0e0e10;
-            --ink: #ececef;
-            --muted: #9c9ca0;
-            --line: #2a2a2d;
-            --card: #1a1a1d;
-            --lawn-deep: #b8e8c8;
+            --paper: #0c0d0c;
+            --ink: #f4f4f5;
+            --ink-soft: #c4c4c8;
+            --muted: #8a8a8f;
+            --line: #232425;
+            --line-soft: #1a1b1c;
+            --card: #16181a;
+            --lawn-deep: #c5e8d1;
+            --lawn-mid: #8fc8a4;
+            --lawn: #2e8a5e;
         }
-        .card p { color: #d0d0d3; }
-        .contact-block {
-            background: rgba(33, 117, 76, 0.14);
-            border-color: rgba(33, 117, 76, 0.30);
+        body { background: #0a0b0a; }
+        .summary-card {
+            background: #131516;
+            border-color: #232425;
+            box-shadow:
+                0 1px 0 rgba(255,255,255,0.02) inset,
+                0 24px 48px -16px rgba(0, 0, 0, 0.6);
         }
-        .summary {
-            background: rgba(33, 117, 76, 0.16);
-            border-color: rgba(33, 117, 76, 0.32);
+        .summary-headline { color: #e0f2e6; }
+        .section h2 { color: #e0f2e6; }
+        .section-num { color: #8fc8a4; }
+        .summary-tag { color: #8fc8a4; }
+        .summary-tag::before { background: #8fc8a4; }
+        .pull {
+            background: rgba(46, 138, 94, 0.14);
+            border-left-color: #8fc8a4;
+            color: #d8efe0;
         }
-        .summary-text { color: #d8efe0; }
+        .footer-mark { background: #1f6e47; }
+        .footer-brand { color: #f0f0f2; }
     }
 </style>
 </head>
 <body>
     <header class="hero">
+        <div class="topbar">
+            <div class="topbar-inner">
+                <a href="index.html" class="brand">
+                    <span class="brand-mark">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color:#fff">
+                            <path d="M3 6h5l2 3-2 3H3"/>
+                            <path d="M3 14h5l2 3-2 3H3"/>
+                            <path d="M14 9h5"/>
+                            <path d="M14 17h5"/>
+                            <path d="M19 9v8"/>
+                        </svg>
+                    </span>
+                    <span>BowlsKnockout</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html">Support</a>
+                    <a href="privacy.html" class="active">Privacy</a>
+                </nav>
+            </div>
+        </div>
+
+        <svg class="hero-shield" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+            <g stroke="#ffffff">
+                <path d="M100 20 L40 50 V110 C40 145 65 170 100 180 C135 170 160 145 160 110 V50 Z"/>
+                <path d="M100 40 L60 60 V110 C60 135 78 152 100 160 C122 152 140 135 140 110 V60 Z"/>
+                <path d="M80 100 L95 115 L125 85"/>
+            </g>
+        </svg>
+        <div class="hero-grain"></div>
+
         <div class="hero-inner">
-            <span class="badge"><span class="badge-dot"></span>Privacy</span>
-            <h1>Privacy Policy</h1>
-            <p class="lede">BowlsKnockout is built to work entirely on your device. Your information stays with you.</p>
-            <p class="updated">Last updated: 27 April 2026</p>
+            <span class="eyebrow"><span class="eyebrow-dot"></span>Privacy Policy</span>
+            <h1 class="display serif">Your data <em>stays</em> with you.</h1>
+            <p class="lede">BowlsKnockout is built to work entirely on your device. We don't collect, transmit, or store any personal information — full stop.</p>
+            <span class="updated">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                Last updated · 27 April 2026
+            </span>
         </div>
     </header>
 
     <main>
-        <div class="summary">
-            <span class="summary-icon" aria-hidden="true">✓</span>
-            <span class="summary-text">In short: BowlsKnockout does not collect, store, transmit, or share any personal data.</span>
+        <div class="summary-card">
+            <div class="summary-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                </svg>
+            </div>
+            <div class="summary-text">
+                <div class="summary-tag">In short</div>
+                <div class="summary-headline">BowlsKnockout does not collect, store, transmit, or share any personal data.</div>
+            </div>
         </div>
 
-        <section class="card">
-            <h2>Information we collect</h2>
-            <p>None. BowlsKnockout does not collect any personal information, usage data, analytics, device identifiers, location data, or any other information from you or your device.</p>
-            <p>We do not use cookies, tracking pixels, advertising identifiers, or any third-party analytics or advertising SDKs.</p>
-        </section>
+        <div class="grid">
+            <aside class="toc">
+                <p class="toc-title">On this page</p>
+                <ul>
+                    <li><a href="#info">1. Information we collect</a></li>
+                    <li><a href="#handling">2. How your data is handled</a></li>
+                    <li><a href="#third-party">3. Third-party services</a></li>
+                    <li><a href="#children">4. Children's privacy</a></li>
+                    <li><a href="#changes">5. Changes to this policy</a></li>
+                    <li><a href="#contact">6. Contact</a></li>
+                </ul>
+            </aside>
 
-        <section class="card">
-            <h2>How your data is handled</h2>
-            <p>Anything you enter into the app — such as player names or draw configurations — stays on your device. It is not sent to us, to any server, or to any third party.</p>
-            <p>If you choose to print, share, or export a draw using your device's built-in share sheet, that action is handled entirely by iOS and goes directly to the destination you choose.</p>
-        </section>
+            <article>
+                <section class="section" id="info">
+                    <p class="section-num">01</p>
+                    <h2>Information we collect</h2>
+                    <p>None. BowlsKnockout does not collect any personal information, usage data, analytics, device identifiers, location data, or any other information from you or your device.</p>
+                    <p>We do not use cookies, tracking pixels, advertising identifiers, or any third-party analytics or advertising SDKs.</p>
+                </section>
 
-        <section class="card">
-            <h2>Third-party services</h2>
-            <p>BowlsKnockout does not integrate with any third-party analytics, advertising, crash reporting, or tracking services.</p>
-        </section>
+                <section class="section" id="handling">
+                    <p class="section-num">02</p>
+                    <h2>How your data is handled</h2>
+                    <p>Anything you enter into the app — such as player names or draw configurations — stays on your device. It is not sent to us, to any server, or to any third party.</p>
+                    <p>If you choose to print, share, or export a draw using your device's built-in share sheet, that action is handled entirely by iOS and goes directly to the destination you choose.</p>
+                    <p class="pull">Your draws never leave your iPhone or iPad unless you explicitly share them.</p>
+                </section>
 
-        <section class="card">
-            <h2>Children's privacy</h2>
-            <p>Because the app does not collect any data, it does not knowingly collect any information from children under 13 (or the equivalent minimum age in the user's jurisdiction).</p>
-        </section>
+                <section class="section" id="third-party">
+                    <p class="section-num">03</p>
+                    <h2>Third-party services</h2>
+                    <p>BowlsKnockout does not integrate with any third-party analytics, advertising, crash reporting, or tracking services.</p>
+                </section>
 
-        <section class="card">
-            <h2>Changes to this policy</h2>
-            <p>If this privacy policy ever changes, the updated version will be posted on this page with a new "Last updated" date. Since the app does not collect data, any future changes are likely to be minor wording updates.</p>
-        </section>
+                <section class="section" id="children">
+                    <p class="section-num">04</p>
+                    <h2>Children's privacy</h2>
+                    <p>Because the app does not collect any data, it does not knowingly collect any information from children under 13 (or the equivalent minimum age in the user's jurisdiction).</p>
+                </section>
 
-        <section class="card">
-            <h2>Contact</h2>
-            <p>If you have any questions about this privacy policy, please get in touch.</p>
-            <a class="contact-block" href="mailto:elliotcbeattie@gmail.com?subject=BowlsKnockout%20privacy">
-                <span class="contact-icon" aria-hidden="true">✉</span>
-                <span class="contact-text">
-                    <span class="contact-label">Contact</span>
-                    <span class="contact-email">elliotcbeattie@gmail.com</span>
-                </span>
-            </a>
-        </section>
+                <section class="section" id="changes">
+                    <p class="section-num">05</p>
+                    <h2>Changes to this policy</h2>
+                    <p>If this privacy policy ever changes, the updated version will be posted on this page with a new "Last updated" date. Since the app does not collect data, any future changes are likely to be minor wording updates.</p>
+                </section>
+
+                <section class="section" id="contact">
+                    <p class="section-num">06</p>
+                    <h2>Get in touch</h2>
+                    <p>If you have any questions about this privacy policy, we'd be happy to answer them. Email is the fastest way to reach us.</p>
+                    <a class="contact-block" href="mailto:elliotcbeattie@gmail.com?subject=BowlsKnockout%20privacy">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+                        </span>
+                        <span class="contact-text">
+                            <span class="contact-label">Email us</span>
+                            <span class="contact-email">elliotcbeattie@gmail.com</span>
+                        </span>
+                        <span class="contact-arrow" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                        </span>
+                    </a>
+                </section>
+            </article>
+        </div>
     </main>
 
     <footer>
-        <p>© <span id="year"></span> BowlsKnockout · <a href="index.html">Support</a></p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="footer-mark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 6h5l2 3-2 3H3"/>
+                        <path d="M3 14h5l2 3-2 3H3"/>
+                        <path d="M14 9h5"/><path d="M14 17h5"/>
+                        <path d="M19 9v8"/>
+                    </svg>
+                </span>
+                <span>BowlsKnockout</span>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Support</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="mailto:elliotcbeattie@gmail.com">Contact</a>
+            </div>
+            <div>© <span id="year"></span> BowlsKnockout</div>
+        </div>
     </footer>
 
     <script>

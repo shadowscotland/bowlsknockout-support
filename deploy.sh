@@ -80,13 +80,18 @@ gh api -X POST "repos/$GH_USER/$REPO_NAME/pages" \
     -f "source[path]=/" \
     --silent 2>/dev/null || true
 
-# --- 6. Output the public URL ----------------------------------------------
-URL="https://$GH_USER.github.io/$REPO_NAME/"
+# --- 6. Output the public URLs ---------------------------------------------
+BASE_URL="https://$GH_USER.github.io/$REPO_NAME"
+SUPPORT_URL="$BASE_URL/"
+PRIVACY_URL="$BASE_URL/privacy.html"
 
 echo ""
 echo "Done."
 echo ""
-echo "Support URL (paste into App Store Connect):"
-echo "    $URL"
+echo "Support URL (paste into App Store Connect → Support URL):"
+echo "    $SUPPORT_URL"
+echo ""
+echo "Privacy Policy URL (paste into App Store Connect → Privacy Policy URL):"
+echo "    $PRIVACY_URL"
 echo ""
 echo "First-time deploys typically go live within 30 to 60 seconds."
